@@ -46,18 +46,12 @@ func TestAddNegativeNumbers(t *testing.T) {
 	}
 }
 
-// Lets combine them together by using table
-// tests AND make sure that all run even if some
-// fail by introducing subtests. These are
-// triggered with the t.Run() you'll see below.
+// Lets combine them together by using table tests AND make sure that all run even if some fail by
+// introducing subtests. These are triggered with the t.Run() you'll see below.
 // More: https://golang.org/pkg/testing/#hdr-Subtests_and_Sub_benchmarks
-// Not only do you get info about all
-// your tests, but you also get it in a much more
-// consice way.
-// Additionally, we can introduce the assert()
-// function from github.com/stretchr/testify to
-// clean up our assertions and give us some more
-// informative output when things fail.
+// Not only do you get info about all your tests, but you also get it in a much more consice way.
+// Additionally, we can introduce the assert() function from github.com/stretchr/testify to clean
+// up our assertions and give us some more informative output when things fail.
 func TestAdd(t *testing.T) {
 	testCases := []struct {
 		name     string
@@ -79,25 +73,17 @@ func TestAdd(t *testing.T) {
 	}
 }
 
-// If you set up test helpers to open files, set
-// ENV variables or so on, here's some neat ways
-// to set them up that'll help remove clutter
-// from your tests, allowing you and your team to
-// focus on what's actually important: the tests.
+// If you set up test helpers to open files, set ENV variables or so on, here's some neat ways to
+// set them up that'll help remove clutter from your tests, allowing you and your team to focus on
+// what's actually important: the tests.
 
-// First, let's take a look at the 'standard' way
-// of calling a test helper that has the chance
-// to fail.
-// This first helper example will return an error
-// if any is returned. This results in cluttering
-// up the test example
+// First, let's take a look at the 'standard' way of calling a test helper that has the chance to
+// fail. This first helper example will return an error if any is returned. This results in
+// cluttering up the test example
 func TestExampleHelper(t *testing.T) {
-	// Here our example will parse some 'data'
-	// that's required for the test to run. In
-	// practice, this could be a test file for
-	// instance.
-	// This particular example takes up three
-	// lines when one could suffice.
+	// Here our example will parse some 'data' that's required for the test to run. In practice,
+	// this could be a test file for instance. This particular example takes up three lines when
+	// one could suffice.
 	expected, err := testFloatParserReturnsError("10")
 	if err != nil {
 		t.FailNow()
@@ -106,8 +92,7 @@ func TestExampleHelper(t *testing.T) {
 	// Do something for our test
 	actual := Add(5, 5)
 
-	// Make our assertion with the data from the
-	// helper
+	// Make our assertion with the data from the helper
 	assert.Equal(t, expected, actual)
 }
 
